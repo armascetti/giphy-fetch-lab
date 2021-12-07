@@ -23,7 +23,7 @@ function Form(props) {
           value={gifTitle}
           onChange={handleChange}
         />
-        <input type="submit" value="Find Gif Info " />
+        <input type="submit" value="Find Gif Info" />
       </form>
     </>
   );

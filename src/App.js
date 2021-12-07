@@ -7,33 +7,31 @@ function App() {
   const [gifData, setGifData] = useState('');
   const [gifTitle, setGifTitle] = useState('')
 
-  const handleSubmit = search => {
-    setGifTitle(search)
+  const handleSubmit = title => {
+    setGifTitle(title)
   };
 
   useEffect(() => {
     let apiKey = process.env.REACT_APP_GIPHY_API_KEY
-    let gifUrl = `api.giphy.com/v1/gifs/random?tag=${gifTitle}&api_key=${apiKey}`;
+    let gifUrl = `https://api.giphy.com/v1/gifs/random?tag=${gifTitle}&api_key=${apiKey}`;
 
-    const makeApiCall = () => {
+  const makeApiCall = () => {
       fetch(gifUrl)
-        .then(res => {
-          console.log(res)
-          return res.json()
-        })
+        .then(res => res.json())
         .then(data => {
           console.log(data)
           setGifData((data))
-        });
+        })
     }
     makeApiCall()
   }, [gifTitle])
+
 
   return (
     <div className="App">
       <h1>Find a Gif Here </h1>
       <Form handleSubmit={handleSubmit} />
-      {gifData && <Gif gif={gifData} />}
+      {gifData.data ? <Gif gif={gifData} /> : null}
     </div>
   );
 }
