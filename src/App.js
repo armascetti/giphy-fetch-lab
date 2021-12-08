@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       <h1>Find a Gif Here </h1>
       <Form handleSubmit={handleSubmit} />
-      {gifData.data ? <Gif gif={gifData} /> : null}
+      {gifData.data ? <Gif gif={gifData} /> : "Pull Random Gifs From Giphy"}
     </div>
   );
 }

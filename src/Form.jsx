@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 function Form(props) {
   const [gifTitle, setGifTitle] = useState('')
 
@@ -8,10 +9,12 @@ function Form(props) {
     props.handleSubmit(gifTitle)
     setGifTitle('')
   };
-
-  const handleChange = e => {
+   const handleChange = e => {
     const title= e.target.value
     setGifTitle(title)
+  };
+  const refreshPage = () => {
+    window.location.reload()
   };
 
   return (
@@ -24,9 +27,12 @@ function Form(props) {
           onChange={handleChange}
         />
         <input type="submit" value="Find Gif Info" />
-      </form>
+        <button onClick={refreshPage}> Make API call again 
+        </button>      
+        </form>
     </>
   );
 }
+
 
 export default Form;
