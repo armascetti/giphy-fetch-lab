@@ -4,7 +4,7 @@ import React from 'react'
   console.log("GIF IS HERE", gif)
   return(
     <div>
-      <img src={gif.data.images.original.url} alt="searched Gif" />
+      <img src={gif.data.results.thumbnail} alt="searched Gif" />
     </div>
   )
 }

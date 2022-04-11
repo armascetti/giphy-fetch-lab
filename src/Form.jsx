@@ -9,8 +9,8 @@ function Form(props) {
     props.handleSubmit(gifTitle)
     setGifTitle('')
   };
-   const handleChange = e => {
-    const title= e.target.value
+  const handleChange = e => {
+    const title = e.target.value
     setGifTitle(title)
   };
   const refreshPage = () => {
@@ -27,11 +27,11 @@ function Form(props) {
           onChange={handleChange}
         />
         <input type="submit" value="Find Gif Info" />
-        <button onClick={refreshPage}> Make API call again 
-        </button>      
-        </form>
+        <button onClick={refreshPage}> Make API call again
+        </button>
+      </form>
     </>
-  );
+  )
 }
 
 

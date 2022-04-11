@@ -19,7 +19,7 @@ function App() {
       fetch(gifUrl)
         .then(res => res.json())
         .then(data => {
-          console.log(data)
+          console.log("API data here", data)
           setGifData((data))
         })
     }
